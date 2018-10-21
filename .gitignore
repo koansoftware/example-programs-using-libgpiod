@@ -1,0 +1,5 @@
+*~
+*.o
+monitor-gpio
+read-gpio
+toggle-gpio
