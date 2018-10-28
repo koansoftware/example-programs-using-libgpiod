@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------
-// monitor-gpio.c
+// read-gpio.c
 //
 //   This is an example of simple GPIO access with the libGPIOd library.
 //
