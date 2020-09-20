@@ -1,7 +1,7 @@
 CROSS_COMPILE ?=
-CC = $(CROSS_COMPILE)gcc
-CFLAGS = -Wall -g
-LDFLAGS = -lgpiod
+CC ?= $(CROSS_COMPILE)gcc
+CFLAGS += -Wall -g
+LDFLAGS += -lgpiod
 
 EXE =                  \
   read-gpio            \
@@ -13,10 +13,8 @@ EXE =                  \
 
 all:$(EXE)
 
-
 .PHONY: clean
 
 clean:
 	rm -f $(EXE) *.o
-
 
