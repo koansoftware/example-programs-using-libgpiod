@@ -3,10 +3,15 @@ CC ?= $(CROSS_COMPILE)gcc
 CFLAGS += -Wall -g
 LDFLAGS += -lgpiod
 
-EXE =                  \
-  read-gpio            \
-  toggle-gpio          \
-  monitor-gpio         \
+EXE =                   \
+  read-gpio             \
+  toggle-gpio           \
+  monitor-gpio          \
+  list-gpio-lines       \
+  invert-gpio           \
+  wait-gpio-event       \
+  ctxless-toggle-gpio   \
+  low-level-toogle-gpio \
 
 
 .PHONY: all

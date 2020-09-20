@@ -3,3 +3,9 @@
 monitor-gpio
 read-gpio
 toggle-gpio
+invert-gpio
+list-gpio-lines
+wait-gpio-event
+ctxless-toggle-gpio
+low-level-toogle-gpio
+

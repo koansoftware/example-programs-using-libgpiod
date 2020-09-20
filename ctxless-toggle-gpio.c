@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------
-// read-gpio.c
+// ctxless-toggle-gpio.c
 //
 //   This is an example of simple GPIO access with the libGPIOd library.
 //
@@ -10,10 +10,10 @@
 #include <gpiod.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
-	int value;
 	int offset;
 
 	if (argc != 3) {
@@ -24,12 +24,9 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "invalid offset: %s\n", argv[2]);
 		exit(EXIT_FAILURE);
 	}
-	value = gpiod_ctxless_get_value(argv[1], offset, 0, argv[0]);
-
-	if (value < 0) {
-		perror("gpiod_ctxless_get_value");
-		exit(EXIT_FAILURE);
+	for (;;) {
+		gpiod_ctxless_set_value(argv[1], offset, 0, 0, argv[0], NULL, NULL);
+		gpiod_ctxless_set_value(argv[1], offset, 1, 0, argv[0], NULL, NULL);
 	}
-	fprintf(stdout, "%d\n", value);
 	return EXIT_SUCCESS;
 }
