@@ -1,7 +1,6 @@
-CROSS_COMPILE ?=
-CC ?= $(CROSS_COMPILE)gcc
-CFLAGS += -Wall -g
-LDFLAGS += -lgpiod
+# Tested with cross-compiler
+
+LDFLAGS = -lgpiod
 
 EXE =                   \
   read-gpio             \
